@@ -12,8 +12,8 @@ pythonTranspiler.register = function(handlers, app, config) {
     res.set('Content-Type', 'text/html');
     fs.readFile(__dirname + '/form.html', function(err, data) {
       if (!err) {
-        data = (data + '').replace('{{ url }}', htmlencode(config.serverAddress + 'html/jsvee-python-json/transpiler') + '?url=http://pathtothetranspiledcode/file.json</code>');
-        data = (data + '').replace('{{ kelmu }}', htmlencode(config.serverAddress + 'html/jsvee-python-json/transpiler') + '?url=http://pathtothetranspiledcode/file.json&kelmuUrl=http://pathtothedefinitionfile/file.jsonp</code>');
+        data = (data + '').replace('{{ url }}', htmlencode(config.serverAddress + 'html/jsvee/jsvee-python-json/transpiler') + '?url=http://pathtothetranspiledcode/file.json</code>');
+        data = (data + '').replace('{{ kelmu }}', htmlencode(config.serverAddress + 'html/jsvee/jsvee-python-json/transpiler') + '?url=http://pathtothetranspiledcode/file.json&kelmuUrl=http://pathtothedefinitionfile/file.jsonp</code>');
         res.send(data);
       } else {
         res.send("Error");
