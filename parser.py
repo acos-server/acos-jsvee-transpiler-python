@@ -90,7 +90,8 @@ def handleAssign(node, line, result):
         assert len(target.slice._fields) == 1 and 'value' in target.slice._fields
         pos = result.getPosition()
         traverseCode(target.value, line, result)
-        result.steps.append(['addOperator', '[]=', result.getPosition()])
+        result.steps.append(['addOperator', '[ ] =', result.getPosition()])
+        result.addInitStep(['createOperator','[ ] =', 'pr', '', '[ # ] = #'])
         result.moveLeft()
         result.moveDown()
         result.moveParentRight()
@@ -486,7 +487,8 @@ def handleSubscript(node, line, result):
     pos = result.getPosition()
     traverseCode(node.value, line, result)
 
-    result.steps.append(['addOperator', '[]', result.getPosition()])
+    result.steps.append(['addOperator', '[ ]', result.getPosition()])
+    result.addInitStep(['createOperator', '[ ]', 'pr', '', ' [ # ]'])
     result.moveLeft()
     result.moveDown()
     result.moveParentRight()
