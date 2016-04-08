@@ -8,8 +8,7 @@
   "peerDependencies": {
     "acos-jsvee": "^0.1.0",
     "acos-jsvee-python": "^0.1.0",
-    "acos-kelmu": "^0.1.0",
-	"acos-server": "^0.1.0"
+    "acos-kelmu": "^0.1.0"
   },
   "dependencies": {
     "python-shell": "0.0.3"
