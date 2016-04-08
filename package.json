@@ -1,6 +1,6 @@
 {
   "name": "acos-jsvee-transpiler-python",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Python code transpiler for Jsvee",
   "main": "index.js",
   "scripts": {},
@@ -14,7 +14,6 @@
     "python-shell": "0.0.3"
   },
   "author": "Teemu Sirkiä",
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/acos-server/acos-jsvee-transpiler-python.git"
