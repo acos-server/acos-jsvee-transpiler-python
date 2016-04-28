@@ -40,7 +40,8 @@
             container.appendTo($('#result'));
             $('#result').show();
 
-            new JSVEE.ui('transpiler', container);
+            window.kelmu.callbacks.transpiler = [];
+            new JSVEE.ui('transpiler', container);            
             window.kelmu.initAnnotations(container, 'transpiler');
 
             $('#editor').hide();
