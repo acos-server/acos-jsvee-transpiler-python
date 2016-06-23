@@ -100,11 +100,10 @@ def handleAssign(node, line, result):
         result.moveParentRight()
         traverseCode(node.value, line, result)
         result.steps.append(['setValueAtIndex', pos])
-        result.moveUp()
-        result.moveRight()
+        result.resetPosition()
     elif name == 'Attribute':
         traverseCode(node.value, line, result)
-        assert node.targets[0].value.__class__.__name__ == 'Name'        
+        assert node.targets[0].value.__class__.__name__ == 'Name'
         result.steps.append(['assignField', node.targets[0].attr, '@' + node.targets[0].value.id])
         result.resetPosition()
     else:
