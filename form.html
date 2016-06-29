@@ -74,8 +74,8 @@
     This tool transpiles the given Python code into form that Jsvee understands and can execute.
     Not all Python language features are supported. Arithmetical operations, assignments, while loops,
     for loops to iterate a list, functions, lists, dictionaries and simple classes are available.
-    The only built-in functions available are: <code>float</code>, <code>input</code>, <code>int</code>,
-    <code>len</code>, <code>list.append</code> and <code>print</code>. You will get an error if the
+    The only built-in functions available are: <code>abs</code>, <code>float</code>, <code>input</code>, <code>int</code>,
+    <code>len</code>, <code>max</code>, <code>min</code>, <code>list.append</code> and <code>print</code>. You will get an error if the
     code contains language features which are not available.
   </p>
 
@@ -86,7 +86,7 @@
       <br>
       Width: <input id="width" value="800"><br>
       Heap height: <input id="height" value="80"><br>
-      Stack height: <input id="height" value="150"><br>
+      Stack height: <input id="stack-height" value="150"><br>
       Code position: <select id="position"><option value="left">left</option><option value="top">top</option></select><br/>
       <input id="submit" type="submit" value="Transpile" />
     </form>
