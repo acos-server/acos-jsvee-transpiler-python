@@ -24,7 +24,7 @@
           var settings = { 'code' : $('#position').val(), 'heapHeight' : $('#height').val(), 'stackHeight' : $('#stack-height').val(), 'width' : $('#width').val() };
 
           if (data && data.steps) {
-            var animation = {settings: settings, init: data.init, steps: data.steps};
+            var animation = {settings: settings, init: data.init, steps: data.steps, lines: data.lines};
             JSVEE.animations['transpiler'] = animation;
             $('#result').children().remove();
 
