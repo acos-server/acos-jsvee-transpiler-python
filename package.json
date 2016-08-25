@@ -1,6 +1,6 @@
 {
   "name": "acos-jsvee-transpiler-python",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Python code transpiler for Jsvee",
   "main": "index.js",
   "scripts": {},
