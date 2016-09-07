@@ -278,7 +278,7 @@ def handleClassDef(node, line, result):
 
 
 def handleCompare(node, line, result):
-    ops = {'Gt': '>', 'Lt': '<', 'GtE': '>=', 'LtE': '<=', 'In': 'in', 'NotIn': 'not in'}
+    ops = {'Gt': '>', 'Lt': '<', 'GtE': '>=', 'LtE': '<=', 'In': 'in', 'NotIn': 'not in', 'Eq': '==', 'NotEq': '!='}
 
     traverseCode(node.left, line, result)
 
