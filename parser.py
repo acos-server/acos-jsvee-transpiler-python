@@ -249,7 +249,7 @@ def handleCall(node, line, result):
             
         if node.func.attr == 'split':
             result.addInitStep(['createClass', 'str'])
-            result.addInitStep(['createFunction', 'split', 'split(s, sep)', '2', '-1', 'str'])
+            result.addInitStep(['createFunction', 'split', 'split(sep)', '1', '-1', 'str'])
 
         result.moveDown()
         result.moveParentRight()
