@@ -74,6 +74,7 @@ class ParseResult:
 
 # *********************************************************************************************************************
 
+
 def handleAssign(node, line, result):
     result.checkLine(line)
 
@@ -236,19 +237,19 @@ def handleCall(node, line, result):
 
     elif name == 'Attribute':
         type = node.func.value.__class__.__name__
-        assert type == 'Name'
-
-        result.moveRight()
-        position2 = result.getPosition()
-
-        result.steps.append(['addValueFromVariable', node.func.value.id, position])
-        result.steps.append(['addFunction', node.func.attr, position2, len(node.args), '?'])
+        
+        traverseCode(node.func.value, line, result)
+        result.steps.append(['addFunction', node.func.attr, result.getPosition(), len(node.args), '?'])
 
         result.moveLeft()
 
         if node.func.attr == 'append' and 'list' in result.classes:
             result.initSteps.append(['createClass', 'list'])
             result.initSteps.append(['createFunction', 'append', 'append' + '(item)', '1', '-1', 'list'])
+            
+        if node.func.attr == 'split':
+            result.initSteps.append(['createClass', 'str'])
+            result.initSteps.append(['createFunction', 'split', 'split(s, sep)', '2', '-1', 'str'])
 
         result.moveDown()
         result.moveParentRight()
@@ -599,6 +600,7 @@ def handleWhile(node, line, result):
 
     result.steps.append(['_label', label3])
     result.breakStack.pop()
+    
 
 # *********************************************************************************************************************
 
