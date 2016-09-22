@@ -244,12 +244,12 @@ def handleCall(node, line, result):
         result.moveLeft()
 
         if node.func.attr == 'append' and 'list' in result.classes:
-            result.initSteps.append(['createClass', 'list'])
-            result.initSteps.append(['createFunction', 'append', 'append' + '(item)', '1', '-1', 'list'])
+            result.addInitStep(['createClass', 'list'])
+            result.addInitStep(['createFunction', 'append', 'append' + '(item)', '1', '-1', 'list'])
             
         if node.func.attr == 'split':
-            result.initSteps.append(['createClass', 'str'])
-            result.initSteps.append(['createFunction', 'split', 'split(s, sep)', '2', '-1', 'str'])
+            result.addInitStep(['createClass', 'str'])
+            result.addInitStep(['createFunction', 'split', 'split(s, sep)', '2', '-1', 'str'])
 
         result.moveDown()
         result.moveParentRight()
